@@ -41,5 +41,5 @@ Icon
 
 # Project specific
 test_folders/
-make-date-folder
+/make-date-folder
 bin/

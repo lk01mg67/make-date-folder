@@ -2,11 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0] - 2025-12-31
+
+### Added
+- **단위 테스트**: `pkg/generator` 패키지에 대한 자동화된 단위 테스트 (`generator_test.go`) 추가
+
+### Refactored
+- **표준 Go 프로젝트 레이아웃 적용**:
+  - `cmd/make-date-folder/main.go`: CLI 엔트리 포인트 (인자 처리 및 출력 담당)
+  - `pkg/generator/generator.go`: 핵심 비즈니스 로직 (폴더 생성 라이브러리)
+  - 로직 분리를 통해 재사용성 및 테스트 용이성 확보
+
 ## [1.3.0] - 2025-12-31
 
 ### Changed
-- **프로젝트 구조 개편**: 메인 소스 코드를 `cmd/make-date-folder/` 폴더로 이동하여 표준 Go 프로젝트 레이아웃 적용
-- **Makefile 업데이트**: 소스 경로 변경에 따른 빌드 및 실행 명령어 수정
+- **프로젝트 구조 개편**: 메인 소스 코드를 `cmd/make-date-folder/` 폴더로 이동
 
 ## [1.2.0] - 2025-12-31
 
@@ -19,15 +29,12 @@ All notable changes to this project will be documented in this file.
 - **프로젝트 표준화**: `Makefile`, `LICENSE` (MIT), `CHANGELOG.md` 추가
 - **환경 설정**: macOS 및 Go 개발 환경에 최적화된 `.gitignore` 반영
 - **GitHub 연동**: 저장소 Description 및 Topics 데이터 업데이트
-- **문서화**: `README.md` 내 실제 실행 예시, 결과 메시지, 트리 구조 설명 추가
+- **문서화**: `README.md` 내 실제 실행 예시 추가
 
 ### Improved
-- **OS 호환성**: `path/filepath` 패키지를 도입하여 Windows/macOS/Linux 통합 경로 처리 지원
-- **안정성**: 
-  - 입출력 인자 검증 및 `strconv` 에러 핸들링 추가
-  - `filepath.Abs`를 통한 절대 경로 처리 로직 적용
-  - 폴더 생성 실패 시 상세 에러 메시지 출력 및 작업 연속성 보장
-- **UX**: 실행 시작 및 완료 시 요약 통계(성공 횟수 등) 메시지 출력 추가
+- **OS 호환성**: `path/filepath` 패키지 도입
+- **안정성**: 에러 핸들링 및 절대 경로 처리 로직 적용
+- **UX**: 실행 요약 통계 메시지 출력 추가
 
 ## [1.0.0] - 2025-12-31
 
