@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2025-12-31
+
+### Changed
+- **프로젝트 구조 개편**: 메인 소스 코드를 `cmd/make-date-folder/` 폴더로 이동하여 표준 Go 프로젝트 레이아웃 적용
+- **Makefile 업데이트**: 소스 경로 변경에 따른 빌드 및 실행 명령어 수정
+
 ## [1.2.0] - 2025-12-31
 
 ### Added

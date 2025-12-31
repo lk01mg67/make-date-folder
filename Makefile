@@ -1,14 +1,15 @@
 .PHONY: build run clean test help
 
 BINARY_NAME=make-date-folder
+SRC_PATH=./cmd/make-date-folder/main.go
 
 ## build: 프로젝트 빌드
 build:
-	go build -o $(BINARY_NAME) main.go
+	go build -o $(BINARY_NAME) $(SRC_PATH)
 
 ## run: 프로그램 실행 (사용법: make run ARGS="./ 5")
 run:
-	go run main.go $(ARGS)
+	go run $(SRC_PATH) $(ARGS)
 
 ## clean: 빌드된 바이너리 및 임시 폴더 삭제
 clean:
