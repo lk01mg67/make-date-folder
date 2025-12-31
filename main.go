@@ -10,10 +10,22 @@ import (
 	"time"
 )
 
+const version = "1.1.0"
+
 func main() {
+	if len(os.Args) < 2 {
+		printUsage()
+		return
+	}
+
+	arg1 := os.Args[1]
+	if arg1 == "-v" || arg1 == "--version" || arg1 == "version" {
+		fmt.Printf("make-date-folder version %s\n", version)
+		return
+	}
+
 	if len(os.Args) < 3 {
-		fmt.Println("사용법: go run main.go [경로] [생성일수]")
-		fmt.Println("예시: go run main.go ./ 365")
+		printUsage()
 		return
 	}
 
@@ -60,11 +72,18 @@ func main() {
 func makeFolder(basePath, year, month, day string) error {
 	// OS에 맞는 경로 구분자를 사용하도록 filepath.Join 사용
 	path := filepath.Join(basePath, year, month, day)
-	
+
 	// 폴더 생성 (0755 권한)
 	err := os.MkdirAll(path, 0755)
 	if err != nil {
 		return err
 	}
 	return nil
+}
+
+func printUsage() {
+	fmt.Println("사용법: go run main.go [경로] [생성일수]")
+	fmt.Println("옵션:")
+	fmt.Println("  -v, --version  버전 정보 출력")
+	fmt.Println("예시: go run main.go ./ 365")
 }
