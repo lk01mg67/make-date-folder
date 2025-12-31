@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2025-12-31
+
+### Added
+- **의존성 관리**: Go 버전을 1.17에서 1.23으로 업그레이드
+
 ## [1.1.0] - 2025-12-31
 
 ### Added
